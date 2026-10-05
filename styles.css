@@ -2,7 +2,6 @@
     Name: Cassie Nguyen
     Section: MW Web Programming CRN 82835
     Assignment: Homework 2 - My Movie Review
-
 */
 
 
@@ -102,7 +101,8 @@ h1 {
     grid-template-columns: 550px 250px;
 
     grid-template-areas:
-        "reviews overview";
+        "reviews overview"
+        "counter counter";
 }
 
 
@@ -187,7 +187,7 @@ h1 {
 }
 
 
-/* Review quote box */
+/* REVIEW QUOTE BOX */
 
 .review-quote {
     min-height: 60px;
@@ -251,6 +251,8 @@ h1 {
 /* REVIEW COUNTER */
 
 .review-counter {
+    grid-area: counter;
+
     min-height: 20px;
 
     padding: 5px;
@@ -354,7 +356,7 @@ h1 {
 
     gap: 2px;
 
-    z-index: 10;
+    z-index: 1000;
 }
 
 .validator-links a {
@@ -405,7 +407,7 @@ h1 {
     }
 
     .movie-frame {
-        width: calc 800px;
+        width: calc(100% - 16px);
 
         margin-right: 8px;
         margin-left: 8px;
@@ -414,7 +416,8 @@ h1 {
 
         grid-template-areas:
             "reviews"
-            "overview";
+            "overview"
+            "counter";
     }
 
     .review-columns {
@@ -457,12 +460,19 @@ h1 {
 
         margin: 0 auto;
     }
+
+    /*
+        Keep validator links fixed to the
+        bottom-right corner on small screens too.
+    */
+    .validator-links {
+        right: 3px;
+        bottom: 3px;
+    }
 }
 
 
-/* =========================================================
-   480PX PHONE BREAKPOINT
-   ========================================================= */
+/* 480PX PHONE BREAKPOINT */
 
 @media (max-width: 480px) {
 
@@ -542,9 +552,7 @@ h1 {
 }
 
 
-/* =========================================================
-   PRINT STYLES
-   ========================================================= */
+/* PRINT STYLES */
 
 @media print {
 
