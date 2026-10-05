@@ -1,0 +1,577 @@
+/*
+    Name: Cassie Nguyen
+    Section: MW Web Programming CRN 82835
+    Assignment: Homework 2 - My Movie Review
+
+*/
+
+
+/* GENERAL PAGE STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("images/background.png");
+    background-repeat: repeat;
+
+    color: #000;
+
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 8pt;
+}
+
+
+/* TOP BANNER */
+
+.page-banner {
+    width: 100%;
+    height: 50px;
+
+    background-image: url("images/bannerbackground.png");
+    background-repeat: repeat-x;
+
+    text-align: center;
+}
+
+.page-banner img {
+    display: block;
+
+    height: 50px;
+    width: auto;
+
+    margin: 0 auto;
+}
+
+
+/* HOMEPAGE LINK */
+
+.home-navigation {
+    width: 800px;
+
+    margin: 8px auto 0;
+
+    text-align: left;
+}
+
+.home-navigation a {
+    color: #003399;
+
+    font-weight: bold;
+
+    text-decoration: underline;
+}
+
+.home-navigation a:hover,
+.home-navigation a:focus {
+    color: #990000;
+}
+
+
+/* MOVIE TITLE */
+
+h1 {
+    margin: 12px 0 22px;
+
+    text-align: center;
+
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+
+/* MAIN 800PX MOVIE FRAME */
+
+.movie-frame {
+    width: 800px;
+
+    margin: 0 auto;
+
+    border: 4px solid #808080;
+
+    display: grid;
+
+    grid-template-columns: 550px 250px;
+
+    grid-template-areas:
+        "reviews overview";
+}
+
+
+/* REVIEW AREA */
+
+.reviews-area {
+    grid-area: reviews;
+
+    min-width: 0;
+
+    background-color: transparent;
+}
+
+
+/* ROTTEN TOMATOES RATING HEADER */
+
+.rating-banner {
+    min-height: 80px;
+
+    background-image: url("images/rottenbackground.png");
+    background-repeat: repeat-x;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    gap: 5px;
+}
+
+.rotten-logo {
+    width: 85px;
+    height: auto;
+
+    margin-left: 5px;
+}
+
+.rating-number {
+    color: #f00000;
+
+    font-size: 48pt;
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+.rating-count {
+    align-self: flex-end;
+
+    margin-bottom: 12px;
+
+    color: #fff;
+
+    white-space: nowrap;
+}
+
+
+/* REVIEW COLUMNS */
+
+.review-columns {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    column-gap: 2%;
+
+    padding: 12px 10px 0;
+}
+
+.review-column {
+    min-width: 0;
+}
+
+
+/* INDIVIDUAL REVIEWS */
+
+.review {
+    margin-bottom: 35px;
+}
+
+
+/* Review quote box */
+
+.review-quote {
+    min-height: 60px;
+
+    padding: 8px;
+
+    border: 2px solid #808080;
+
+    background-color: #e1d697;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    font-weight: bold;
+
+    line-height: 1.15;
+}
+
+.review-quote img {
+    width: 25px;
+    height: 25px;
+
+    flex: 0 0 25px;
+}
+
+.review-quote span {
+    min-width: 0;
+}
+
+
+/* REVIEWER INFORMATION */
+
+.reviewer-info {
+    margin-top: 8px;
+    margin-left: 7px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.reviewer-info img {
+    width: 25px;
+    height: 25px;
+
+    flex: 0 0 25px;
+}
+
+.reviewer-info em {
+    font-style: italic;
+}
+
+
+/* REVIEW COUNTER */
+
+.review-counter {
+    min-height: 20px;
+
+    padding: 5px;
+
+    background-color: #a2b964;
+
+    text-align: center;
+}
+
+
+/* GENERAL OVERVIEW */
+
+.overview {
+    grid-area: overview;
+
+    background-color: #a2b964;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 8pt;
+}
+
+.overview h2 {
+    height: 40px;
+
+    margin: 0;
+    padding: 10px;
+
+    background-color: #000;
+
+    color: #fff;
+
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.movie-poster {
+    display: block;
+
+    width: 250px;
+    height: auto;
+
+    margin: 0;
+}
+
+
+/* DEFINITION LIST */
+
+.overview-information {
+    padding: 10px;
+}
+
+.overview dl {
+    margin: 0;
+    padding: 0;
+}
+
+.overview dt {
+    margin-top: 14px;
+
+    font-weight: normal;
+}
+
+.overview dt:first-child {
+    margin-top: 0;
+}
+
+.overview dd {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 40px;
+
+    line-height: 1.25;
+}
+
+.overview a {
+    color: #0000cc;
+}
+
+.overview a:hover,
+.overview a:focus {
+    color: #990000;
+}
+
+
+/* VALIDATOR LINKS */
+
+.validator-links {
+    position: fixed;
+
+    right: 5px;
+    bottom: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    z-index: 10;
+}
+
+.validator-links a {
+    display: block;
+
+    padding: 4px 6px;
+
+    border: 1px solid #555;
+
+    background-color: #fff;
+
+    color: #003399;
+
+    font-size: 8pt;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.validator-links a:hover,
+.validator-links a:focus {
+    background-color: #ffff99;
+
+    text-decoration: underline;
+}
+
+
+/* 700PX RESPONSIVE BREAKPOINT */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .home-navigation {
+        width: auto;
+
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    h1 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        font-size: 20pt;
+    }
+
+    .movie-frame {
+        width: calc(100% - 16px);
+
+        margin-right: 8px;
+        margin-left: 8px;
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "reviews"
+            "overview";
+    }
+
+    .review-columns {
+        grid-template-columns: 1fr;
+
+        column-gap: 0;
+    }
+
+    .rating-banner {
+        flex-wrap: wrap;
+
+        min-height: 80px;
+
+        padding: 5px;
+    }
+
+    .rotten-logo {
+        width: 70px;
+
+        margin-left: 0;
+    }
+
+    .rating-number {
+        font-size: 40pt;
+    }
+
+    .rating-count {
+        align-self: center;
+
+        margin-bottom: 0;
+    }
+
+    .overview {
+        width: 100%;
+    }
+
+    .movie-poster {
+        width: 100%;
+        max-width: 250px;
+
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   480PX PHONE BREAKPOINT
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .page-banner {
+        height: auto;
+
+        min-height: 50px;
+    }
+
+    .page-banner img {
+        max-width: 100%;
+        height: 50px;
+
+        object-fit: contain;
+    }
+
+    .home-navigation {
+        margin-top: 6px;
+    }
+
+    h1 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+
+        font-size: 17pt;
+    }
+
+    .movie-frame {
+        width: calc(100% - 8px);
+
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+
+    .rating-banner {
+        gap: 3px;
+    }
+
+    .rotten-logo {
+        width: 60px;
+    }
+
+    .rating-number {
+        font-size: 32pt;
+    }
+
+    .rating-count {
+        font-size: 7pt;
+    }
+
+    .review-columns {
+        padding: 8px 6px 0;
+    }
+
+    .review {
+        margin-bottom: 24px;
+    }
+
+    .review-quote {
+        font-size: 8pt;
+    }
+
+    .reviewer-info {
+        margin-left: 3px;
+    }
+
+    .validator-links {
+        right: 2px;
+        bottom: 2px;
+    }
+
+    .validator-links a {
+        padding: 3px 4px;
+
+        font-size: 7pt;
+    }
+}
+
+
+/* =========================================================
+   PRINT STYLES
+   ========================================================= */
+
+@media print {
+
+    body {
+        background: #fff;
+    }
+
+    .home-navigation,
+    .validator-links {
+        display: none;
+    }
+
+    .page-banner {
+        background: none;
+    }
+
+    .movie-frame {
+        width: 100%;
+
+        border: 1px solid #000;
+    }
+
+    .review {
+        break-inside: avoid;
+    }
+
+    .review-quote {
+        break-inside: avoid;
+    }
+}
